@@ -96,24 +96,8 @@ def filterHistory(histFile, histTitle, ignoreFN):
         print l.strip()
 
      
-def submitArgs(fxn, *args):
-
-        #check for kw args 
-        for arg in args:
-            if type(arg) == type("string"):
-                if "=" in arg:
-                    raise NameError("no key word args allowed for CLI")
-                    return 1
-    
-
-        #run fxn 
-        return fxn(*args)
-     
-
-
 if __name__ == "__main__":
     import sys
-    fxn = globals()[sys.argv[1]]
-    theArgs = [fxn]
-    theArgs.extend(sys.argv[2:])
-    submitArgs(*theArgs)
+    assert sys.argv[1] in globals(), "Need name of fxn to run from command line!"
+    fxnToRun = globals()[sys.argv[1]] 
+    fxnToRun(*sys.argv[2:])
