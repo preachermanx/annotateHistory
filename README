@@ -1,0 +1,21 @@
+
+TO INSTALL:
+
+    (cd to folder with install.sh)  
+    chmod 755 install.sh
+    sudo ./install.sh ~/history 
+    source ~/.bashrc
+
+
+TO USE:
+
+    annotateHist "TITLE"
+        - this will filter your history session (up to previous mark) and open the resulting filtered history in vim.  Once in vim you can edit it and save it.  The default place where the file will be saved is in the installation directory ~/history/histories
+
+    setHistMark "TITLE"
+        - sets mark where filter history will STOP filtering.  Only history after the mark will be filtered
+
+
+NOTE:
+
+    ./ignore_start.txt contains a list of patterns to ignore when a bash history line starts with them.  Spaces count.  The comma is ignored

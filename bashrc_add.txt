@@ -1,7 +1,0 @@
-
-#FOR annotateHistory (SAVE THIS COMMENT LINE - USED FOR INSTALL)
-shopt -s histappend
-PROMPT_COMMAND='history -a;echo CWD `pwd` >> ${HOME}/.bash_history'
-alias markHist='${HOME}/histories/scripts/setHistMark.sh'
-alias annotateHist='${HOME}/histories/scripts/annotateHistory.sh'
-

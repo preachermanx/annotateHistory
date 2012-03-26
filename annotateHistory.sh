@@ -7,5 +7,5 @@ if [[ $# != 1 ]]; then
     exit 1
 fi
 
-pypy ${HOME}/histories/scripts/filterHistory.py filterHistory ${HOME}/.bash_history ${1// /_} ${HOME}/histories/scripts/ignore_start.txt | vim - -c "f ${HOME}/histories/${1// /_}.history" +5
+python ${ANN_HIST_DIR}/filterHistory.py filterHistory ${HOME}/.bash_history ${1// /_} ${ANN_HIST_DIR}/ignore_start.txt | vim - -c "f ${ANN_HIST_DIR}/histories/${1// /_}.history" +5
 
